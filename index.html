@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TrendQash Agencies - Professional Trading Platform</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#2563eb',
+                        secondary: '#1e40af',
+                        accent: '#3b82f6',
+                        dark: '#1e293b',
+                        light: '#f8fafc',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+        }
+        
+        .glass-morphism {
+            background: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .mobile-menu {
+            transform: translateX(100%);
+            transition: transform 0.3s ease-in-out;
+        }
+        
+        .mobile-menu.open {
+            transform: translateX(0);
+        }
+        
+        .partner-slider {
+            animation: scroll 20s linear infinite;
+        }
+        
+        @keyframes scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        
+        .faq-item {
+            transition: all 0.3s ease;
+        }
+        
+        .faq-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+        
+        .faq-item.active .faq-content {
+            max-height: 200px;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800">
+    <!-- Fixed Header -->
+    <header class="fixed w-full bg-white shadow-md z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center">
+                <div class="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center mr-3">
+                    <span class="text-white font-bold text-lg">TQ</span>
+                </div>
+                <h1 class="text-lg font-bold text-blue-600">TrendQash</h1>
+            </div>
+            
+            <nav class="hidden md:flex space-x-8">
+                <a href="#home" class="text-slate-700 hover:text-blue-600 font-medium">Home</a>
+                <a href="#about" class="text-slate-700 hover:text-blue-600 font-medium">About</a>
+                <a href="#services" class="text-slate-700 hover:text-blue-600 font-medium">Services</a>
+                <a href="#partners" class="text-slate-700 hover:text-blue-600 font-medium">Partners</a>
+                <a href="#achievements" class="text-slate-700 hover:text-blue-600 font-medium">Achievements</a>
+                <a href="#contact" class="text-slate-700 hover:text-blue-600 font-medium">Contact</a>
+            </nav>
+            
+            <button id="mobile-menu-button" class="md:hidden text-slate-700">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="mobile-menu fixed inset-y-0 right-0 w-64 bg-white shadow-lg z-50 p-6">
+        <div class="flex justify-between items-center mb-8">
+            <div class="flex items-center">
+                <div class="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center mr-2">
+                    <span class="text-white font-bold text-sm">TQ</span>
+                </div>
+                <h2 class="text-lg font-bold text-blue-600">TrendQash</h2>
+            </div>
+            <button id="close-menu" class="text-slate-500">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+            </button>
+        </div>
+        
+        <nav class="flex flex-col space-y-4">
+            <a href="#home" class="text-slate-700 hover:text-blue-600 font-medium py-2 border-b border-slate-100">Home</a>
+            <a href="#about" class="text-slate-700 hover:text-blue-600 font-medium py-2 border-b border-slate-100">About</a>
+            <a href="#services" class="text-slate-700 hover:text-blue-600 font-medium py-2 border-b border-slate-100">Services</a>
+            <a href="#partners" class="text-slate-700 hover:text-blue-600 font-medium py-2 border-b border-slate-100">Partners</a>
+            <a href="#achievements" class="text-slate-700 hover:text-blue-600 font-medium py-2 border-b border-slate-100">Achievements</a>
+            <a href="https://wa.me/254798265822?text=I%20want%20to%20join%20Trendqash" class="text-slate-700 hover:text-blue-600 font-medium py-2 border-b border-slate-100">Contact</a>
+        </nav>
+        
+        <div class="mt-8 flex space-x-4">
+            <a href="https://www.trendqash.com/user/register.php?ref=Rayastamet" class="bg-blue-600 text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-blue-700 transition">Register</a>
+            <a href="https://wa.me/254798265822?text=I%20want%20to%20join%20Trendqash" class="bg-green-500 text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-green-600 transition">
+                <i class="fab fa-whatsapp mr-2"></i> WhatsApp
+            </a>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="home" class="pt-24 pb-16 md:pt-32 md:pb-24 relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-r from-blue-600 to-blue-400 opacity-90 z-0"></div>
+        <div class="absolute inset-0 bg-[url('https://media.istockphoto.com/id/1686527127/photo/healthcare-and-technology-concept-with-flat-icons-and-symbols-template-design-for-health-care.webp?a=1&b=1&s=612x612&w=0&k=20&c=WEFXcYIJWRtiSuIfhLlyAevSg0rnVcsk4jq-aaAY0mU=')] bg-cover bg-center z-0"></div>
+        
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="max-w-2xl glass-morphism rounded-xl p-8 md:p-10 backdrop-blur-md">
+                <h1 class="text-lg md:text-lg lg:text-2xl font-bold text-white mb-4">Welcome to TrendQash</h1>
+                <p class="text-sm text-slate-100 mb-8 "> A trusted digital platform designed for real growth and meaningful results. Join a community built on transparency, innovation, and success.</p>
+                
+                <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                    <a href="https://www.trendqash.com/user/register.php?ref=Rayastamet" class="bg-white text-blue-600 px-6 py-3 rounded-lg text-base font-semibold hover:bg-blue-50 transition text-center">Get Started</a>
+                    <a href="https://wa.me/254798265822?text=I%20want%20to%20join%20Trendqash" class="bg-green-500 text-white px-6 py-3 rounded-lg text-base font-semibold hover:bg-green-600 transition flex items-center justify-center">
+                        <i class="fab fa-whatsapp mr-2"></i> WhatsApp Us
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- About Section -->
+    <section id="about" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-lg font-bold text-slate-800 mb-4">About TrendQash Agencies</h2>
+                <p class="text-slate-600 max-w-2xl mx-auto">A trusted digital platform dedicated to empowering individuals through simple, transparent, and innovative online opportunities. We’re building a community focused on growth, impact, and real financial progress in today’s digital world.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-8 items-center">
+                <div>
+                    <h3 class="text-lg font-semibold text-slate-800 mb-4">Our Mission</h3>
+                    <p class="text-slate-600 mb-6">To provide transparent and rewarding digital opportunities that empower individuals to grow and thrive financially.</p>
+                    
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <div class="bg-blue-100 p-2 rounded-full mr-4">
+                                <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="font-medium text-slate-800">Mentorship</h4>
+                                <p class="text-slate-600 text-sm">Our team provides expert guidance to help you grow and succeed.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-blue-100 p-2 rounded-full mr-4">
+                                <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="font-medium text-slate-800">Unlimited Earnings</h4>
+                                <p class="text-slate-600 text-sm">Our platform offers flexible, scalable earning opportunities with no limits. </p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-blue-100 p-2 rounded-full mr-4">
+                                <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="font-medium text-slate-800">24/7 Support</h4>
+                                <p class="text-slate-600 text-sm">Dedicated customer support available around the clock.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-slate-100 rounded-xl overflow-hidden">
+                    <img src="passive.jpg" alt="Passive income" class="w-full h-auto object-cover">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-16 bg-slate-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-lg font-bold text-slate-800 mb-4">Our Services & Earning Ways</h2>
+                <p class="text-slate-600 max-w-2xl mx-auto">Multiple flexible and rewarding earning avenues tailored for today’s digital world. </p>
+            </div>
+            
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service Card 1 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition">
+                    <div class="p-6">
+                        <div class="bg-blue-100 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
+                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-10 h-10 text-red-600">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75A2.25 2.25 0 014.5 4.5h15a2.25 2.25 0 012.25 2.25v10.5a2.25 2.25 0 01-2.25 2.25h-15A2.25 2.25 0 012.25 17.25V6.75z" />
+  <path stroke-linecap="round" stroke-linejoin="round" d="M10 9.75L15 12l-5 2.25V9.75z" />
+</svg>
+                        </div>
+                        <h3 class="text-lg font-semibold text-slate-800 mb-2">Netflix Ads</h3>
+                        <p class="text-slate-600">View short Netflix-related advertisements posted on your dashboard and earn for each engagement. </p>
+                    </div>
+                </div>
+                
+                <!-- Service Card 2 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition">
+                    <div class="p-6">
+                        <div class="bg-blue-100 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
+                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-10 h-10 text-green-600">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M9 6h6M9 12h6m-6 6h6M5.25 6.75L6.75 8.25 9 6M5.25 12.75L6.75 14.25 9 12M5.25 18.75L6.75 20.25 9 18" />
+</svg>
+                        </div>
+                        <h3 class="text-lg font-semibold text-slate-800 mb-2">Trivia & Surveys</h3>
+                        <p class="text-slate-600">Answer surveys and educational questions directly from your dashboard and earn for your opinions.</p>
+                    </div>
+                </div>
+                
+                <!-- Service Card 3 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition">
+                    <div class="p-6">
+                        <div class="bg-blue-100 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
+                            <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-lg font-semibold text-slate-800 mb-2">TikTok Promotions</h3>
+                        <p class="text-slate-600">Enjoy and interact with entertaining TikTok videos and earn for your participation</p>
+                    </div>
+                </div>
+                
+                <!-- Service Card 4 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition">
+                    <div class="p-6">
+                        <div class="bg-blue-100 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
+                            <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-lg font-semibold text-slate-800 mb-2">Promoted YouTube Videos</h3>
+                        <p class="text-slate-600">Watch informative and engaging YouTube videos uploaded on our platform and get rewarded per view.</p>
+                    </div>
+                </div>
+                
+                <!-- Service Card 5 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition">
+                    <div class="p-6">
+                        <div class="bg-blue-100 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-10 h-10 text-yellow-500">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 9.75h15m-15 0v8.25A2.25 2.25 0 006.75 20.25h10.5A2.25 2.25 0 0019.5 18V9.75m-15 0L3 6.75a1.5 1.5 0 011.5-1.5h15a1.5 1.5 0 011.5 1.5l-1.5 3m-12-3a2.25 2.25 0 114.5 0 2.25 2.25 0 11-4.5 0zm7.5 0a2.25 2.25 0 114.5 0 2.25 2.25 0 11-4.5 0z" />
+</svg>
+                        </div>
+                        <h3 class="text-lg font-semibold text-slate-800 mb-2">Welcome Bonus</h3>
+                        <p class="text-slate-600">Every new member receives a redeemable sign-up bonus as a warm welcome to the TrendQash community..</p>
+                    </div>
+                </div>
+                
+                <!-- Service Card 6 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition">
+                    <div class="p-6">
+                        <div class="bg-blue-100 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M12 11.25a3.75 3.75 0 100-7.5 3.75 3.75 0 000 7.5zM19.5 21v-.75a3.75 3.75 0 00-3.75-3.75H8.25A3.75 3.75 0 004.5 20.25V21m12.75-9h2.25m-2.25 0a1.125 1.125 0 010-2.25h1.125A1.125 1.125 0 0119.5 10.5m0 0a1.125 1.125 0 010 2.25h-1.125A1.125 1.125 0 0117.25 11.25" />
+</svg>
+                        </div>
+                        <h3 class="text-lg font-semibold text-slate-800 mb-2">Affiliate Marketing</h3>
+                        <p class="text-slate-600">Get rewarded up to three levels deep as your network grows.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+<section class="bg-white py-16 px-4 md:px-10">
+  <div class="max-w-7xl mx-auto text-center">
+    <h2 class="text-lg md:text-4xl font-bold text-gray-800 mb-4">Why Choose TrendQash?</h2>
+    <p class="text-gray-600 text-sm md:text-base max-w-2xl mx-auto mb-12">
+      Join a platform built on transparency, innovation, and real financial impact. TrendQash offers a secure, trustworthy environment designed to empower your digital earning journey.
+    </p>
+
+    <div class="grid gap-10 md:grid-cols-3">
+
+      <!-- Card 1 -->
+      <div class="bg-gray-50 rounded-lg shadow-md hover:shadow-lg transition duration-300 p-5 flex flex-col items-center">
+        <img src="withdraw.jpg" alt="Instant Withdrawals" class="w-full h-auto rounded-lg mb-4 object-contain">
+        <h3 class="text-lg font-semibold text-gray-800 mb-1">Instant Withdrawals</h3>
+        <p class="text-sm text-gray-600 text-center">
+          Withdraw your earnings anytime fast, seamless, and fully automated. Your money, on your terms.
+        </p>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="bg-gray-50 rounded-2xl shadow-md hover:shadow-lg transition duration-300 p-5 flex flex-col items-center">
+        <img src="earn.jpg" alt="Unlimited Earning" class="w-full h-auto mb-4 rounded-lg object-contain">
+        <h3 class="text-lg font-semibold text-gray-800 mb-1">Unlimited Earning</h3>
+        <p class="text-sm text-gray-600 text-center">
+          No limits unlock endless earning opportunities based on your effort and consistency.
+        </p>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="bg-gray-50 rounded-2xl shadow-md hover:shadow-lg transition duration-300 p-5 flex flex-col items-center">
+        <img src="cert.jpg" alt="Legit & Registered" class="w-full h-auto mb-4 rounded-lg object-contain">
+        <h3 class="text-lg font-semibold text-gray-800 mb-1">Legit & Registered</h3>
+        <p class="text-sm text-gray-600 text-center">
+          Operates legally and transparently under official registration giving you total peace of mind.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+    <!-- Partners Section -->
+    <section id="partners" class="py-16 bg-slate-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-lg font-bold text-slate-800 mb-4">Our Trusted Partners</h2>
+                <p class="text-slate-600 max-w-2xl mx-auto">We work with trusted partners who share our commitment to innovation, transparency, and excellence helping us deliver a reliable and impactful experience to our users.</p>
+            </div>
+            
+            <div class="relative overflow-hidden">
+                <div class="partner-slider flex items-center space-x-12 py-4">
+                    <div class="flex-shrink-0">
+                        <i class="fab fa-google text-4xl text-slate-700"></i>
+                    </div>
+                    <div class="flex-shrink-0">
+                        <i class="fab fa-youtube text-4xl text-red-600"></i>
+                    </div>
+                    <div class="flex-shrink-0">
+                        <i class="fab fa-tiktok text-4xl text-slate-800"></i>
+                    </div>
+                    <div class="flex-shrink-0">
+                        <i class="fab fa-netflix text-4xl text-red-500"></i>
+                    </div>
+                    <div class="flex-shrink-0">
+                        <i class="fab fa-google-pay text-4xl text-blue-500"></i>
+                    </div>
+                    <div class="flex-shrink-0">
+                        <i class="fab fa-facebook text-4xl text-blue-600"></i>
+                    </div>
+                    <div class="flex-shrink-0">
+                        <i class="fab fa-paypal text-4xl text-blue-700"></i>
+                    </div>
+                    <div class="flex-shrink-0">
+                        <i class="fab fa-cc-mastercard text-4xl text-orange-600"></i>
+                    </div>
+                    <!-- Duplicates for infinite loop -->
+                    <div class="flex-shrink-0">
+                        <i class="fab fa-google text-4xl text-slate-700"></i>
+                    </div>
+                    <div class="flex-shrink-0">
+                        <i class="fab fa-youtube text-4xl text-red-600"></i>
+                    </div>
+                    <div class="flex-shrink-0">
+                        <i class="fab fa-tiktok text-4xl text-slate-800"></i>
+                    </div>
+                    <div class="flex-shrink-0">
+                        <i class="fab fa-netflix text-4xl text-red-500"></i>
+                    </div>
+                    <div class="flex-shrink-0">
+                        <i class="fab fa-google-pay text-4xl text-blue-500"></i>
+                    </div>
+                    <div class="flex-shrink-0">
+                        <i class="fab fa-facebook text-4xl text-blue-600"></i>
+                    </div>
+                    <div class="flex-shrink-0">
+                        <i class="fab fa-paypal text-4xl text-blue-700"></i>
+                    </div>
+                    <div class="flex-shrink-0">
+                        <i class="fab fa-cc-mastercard text-4xl text-orange-600"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Achievements Section -->
+  <section class="bg-white py-16 px-6 md:px-12">
+  <div class="max-w-7xl mx-auto text-center">
+    <h2 class="text-lg md:text-4xl font-bold text-gray-800 mb-4">Our Achievements</h2>
+    <p class="text-gray-600 text-sm md:text-base max-w-2xl mx-auto mb-12">
+      Milestones that reflect our growth, trust, and commitment to delivering real value in the digital space.
+    </p>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 text-center">
+      <!-- Achievement 1 -->
+      <div class="bg-gray-50 rounded-2xl p-6 shadow hover:shadow-md transition">
+        <h3 class="text-lg font-bold text-indigo-600 mb-1">10K+</h3>
+        <p class="text-sm text-gray-600">Active Members</p>
+      </div>
+
+      <!-- Achievement 2 -->
+      <div class="bg-gray-50 rounded-2xl p-6 shadow hover:shadow-md transition">
+        <h3 class="text-lg font-bold text-indigo-600 mb-1">50+</h3>
+        <p class="text-sm text-gray-600">Global Partners</p>
+      </div>
+
+      <!-- Achievement 3 -->
+      <div class="bg-gray-50 rounded-2xl p-6 shadow hover:shadow-md transition">
+        <h3 class="text-lg font-bold text-indigo-600 mb-1">$100K+</h3>
+        <p class="text-sm text-gray-600">Earnings Paid Out</p>
+      </div>
+
+      <!-- Achievement 4 -->
+      <div class="bg-gray-50 rounded-2xl p-6 shadow hover:shadow-md transition">
+        <h3 class="text-lg font-bold text-indigo-600 mb-1">24/7</h3>
+        <p class="text-sm text-gray-600">Customer Support</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+ <!-- FAQ Section -->
+<section id="faq" class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+        <div class="text-center mb-12">
+            <h2 class="text-lg font-bold text-slate-800 mb-4">Frequently Asked Questions</h2>
+            <p class="text-slate-600 max-w-2xl mx-auto">Find answers to common questions about TrendQash Agencies.</p>
+        </div>
+        
+        <div class="max-w-3xl mx-auto space-y-4">
+
+            <!-- FAQ Item 1 -->
+            <div class="faq-item border border-slate-200 rounded-lg overflow-hidden">
+                <button class="faq-question w-full text-left p-4 bg-slate-50 hover:bg-slate-100 transition flex justify-between items-center">
+                    <span class="font-medium text-slate-800">Is earning limited?</span>
+                    <svg class="w-5 h-5 text-blue-600 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </button>
+                <div class="faq-content">
+                    <div class="p-4 text-slate-600">
+                        No, TrendQash offers unlimited earning potential. Your income grows based on your activity and consistency.
+                    </div>
+                </div>
+            </div>
+
+            <!-- FAQ Item 2 -->
+            <div class="faq-item border border-slate-200 rounded-lg overflow-hidden">
+                <button class="faq-question w-full text-left p-4 bg-slate-50 hover:bg-slate-100 transition flex justify-between items-center">
+                    <span class="font-medium text-slate-800">How long does withdrawal take?</span>
+                    <svg class="w-5 h-5 text-blue-600 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </button>
+                <div class="faq-content">
+                    <div class="p-4 text-slate-600">
+                        Withdrawals are processed instantly, allowing you to access your funds anytime without delay.
+                    </div>
+                </div>
+            </div>
+
+            <!-- FAQ Item 3 -->
+            <div class="faq-item border border-slate-200 rounded-lg overflow-hidden">
+                <button class="faq-question w-full text-left p-4 bg-slate-50 hover:bg-slate-100 transition flex justify-between items-center">
+                    <span class="font-medium text-slate-800">How do I create an account?</span>
+                    <svg class="w-5 h-5 text-blue-600 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </button>
+                <div class="faq-content">
+                    <div class="p-4 text-slate-600">
+                        Click <a href="https://www.trendqash.com/user/register.php?ref=Rayastamet" class="text-blue-600 hover:underline font-medium">here</a> to register, fill in your details, and join the platform in just a few steps.
+                    </div>
+                </div>
+            </div>
+
+            <!-- FAQ Item 4 -->
+            <div class="faq-item border border-slate-200 rounded-lg overflow-hidden">
+                <button class="faq-question w-full text-left p-4 bg-slate-50 hover:bg-slate-100 transition flex justify-between items-center">
+                    <span class="font-medium text-slate-800">Is TrendQash available in my country?</span>
+                    <svg class="w-5 h-5 text-blue-600 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </button>
+                <div class="faq-content">
+                    <div class="p-4 text-slate-600">
+                        Yes, TrendQash is available worldwide. You can join and earn from anywhere across the globe.
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-slate-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-lg font-bold text-slate-800 mb-4">Contact Us</h2>
+                <p class="text-slate-600 max-w-2xl mx-auto">Have questions? Our team is ready to assist you 24/7.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-white rounded-xl shadow-md p-6">
+                    <h3 class=" font-semibold text-slate-800 mb-4">Get in Touch</h3>
+                    
+                    <form class="space-y-4">
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-slate-700 mb-1">Full Name</label>
+                            <input type="text" id="name" class="w-full px-4 py-2 border border-slate-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                        </div>
+                        
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-slate-700 mb-1">Email Address</label>
+                            <input type="email" id="email" class="w-full px-4 py-2 border border-slate-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                        </div>
+                        
+                        <div>
+                            <label for="subject" class="block text-sm font-medium text-slate-700 mb-1">Subject</label>
+                            <input type="text" id="subject" class="w-full px-4 py-2 border border-slate-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                        </div>
+                        
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-slate-700 mb-1">Message</label>
+                            <textarea id="message" rows="4" class="w-full px-4 py-2 border border-slate-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"></textarea>
+                        </div>
+                        
+                        <button type="submit" class="bg-blue-600 text-white px-6 py-3 rounded-md font-medium hover:bg-blue-700 transition w-full">Send Message</button>
+                    </form>
+                </div>
+                
+                <div class="space-y-6">
+                    <div class="bg-white rounded-xl shadow-md p-6">
+                        <h3 class="text-xl font-semibold text-slate-800 mb-4">Contact Information</h3>
+                        
+                        <div class="space-y-4">
+                            <div class="flex items-start">
+                                <div class="bg-blue-100 p-2 rounded-full mr-4">
+                                    <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium text-slate-800">Phone</h4>
+                                    <p class="text-slate-600">+254 798 265822</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="bg-blue-100 p-2 rounded-full mr-4">
+                                    <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium text-slate-800">Email</h4>
+                                    <p class="text-slate-600">1trendqashagencies@gmail.com</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="bg-blue-100 p-2 rounded-full mr-4">
+                                    <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium text-slate-800">WhatsApp</h4>
+                                    <p class="text-slate-600">+254 798 265822</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white rounded-xl shadow-md p-6">
+                        <h3 class="text-lg font-semibold text-slate-800 mb-4">Connect With Us</h3>
+                        
+                        <div class="flex space-x-4">
+                            <a href="#" class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 hover:bg-blue-200 transition">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 hover:bg-blue-200 transition">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 hover:bg-blue-200 transition">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 hover:bg-blue-200 transition">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="https://wa.me/254798265822?text=I%20want%20to%20join%20Trendqash" class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 hover:bg-blue-200 transition">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-400 py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <div class="flex items-center mb-4">
+                        <div class="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center mr-2">
+                            <span class="text-white font-bold text-sm">TQ</span>
+                        </div>
+                        <h3 class="text-white text-lg font-bold">TrendQash</h3>
+                    </div>
+                    <p class="mb-4">Professional solutions for individuals and businesses looking to maximize their financial potential.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-slate-400 hover:text-white transition">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="text-slate-400 hover:text-white transition">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-slate-400 hover:text-white transition">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="text-slate-400 hover:text-white transition">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-white text-lg font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="hover:text-white transition">Home</a></li>
+                        <li><a href="#about" class="hover:text-white transition">About Us</a></li>
+                        <li><a href="#services" class="hover:text-white transition">Services</a></li>
+                        <li><a href="#partners" class="hover:text-white transition">Partners</a></li>
+                        <li><a href="#contact" class="hover:text-white transition">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-white text-lg font-semibold mb-4">Services</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-white transition">Forex Classes</a></li>
+                        <li><a href="#" class="hover:text-white transition">Mentorship</a></li>
+                        <li><a href="#" class="hover:text-white transition">Tournaments</a></li>
+                        <li><a href="#" class="hover:text-white transition">Income activities</a></li>
+                        <li><a href="#" class="hover:text-white transition">Instant Withdrawals</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-white text-lg font-semibold mb-4">Newsletter</h4>
+                    <p class="mb-4">Subscribe to our newsletter for the latest earning insights.</p>
+                    <form class="flex">
+                        <input type="email" placeholder="Your email" class="px-4 py-2 rounded-l-md w-full focus:outline-none text-slate-900">
+                        <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded-r-md hover:bg-blue-700 transition">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="mb-4 md:mb-0">© 2025 TrendQash Agencies. All rights reserved.</p>
+                
+                <div class="flex space-x-6">
+                    <a href="#" class="hover:text-white transition">Privacy Policy</a>
+                    <a href="#" class="hover:text-white transition">Terms of Service</a>
+                    <a href="#" class="hover:text-white transition">Risk Disclosure</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const closeMenuButton = document.getElementById('close-menu');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.add('open');
+            document.body.style.overflow = 'hidden';
+        });
+        
+        closeMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.remove('open');
+            document.body.style.overflow = '';
+        });
+        
+        // Close menu when clicking on a link
+        const mobileMenuLinks = document.querySelectorAll('#mobile-menu nav a');
+        mobileMenuLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('open');
+                document.body.style.overflow = '';
+            });
+        });
+        
+        // FAQ Accordion
+        const faqItems = document.querySelectorAll('.faq-item');
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+            question.addEventListener('click', () => {
+                // Close all other items
+                faqItems.forEach(otherItem => {
+                    if (otherItem !== item) {
+                        otherItem.classList.remove('active');
+                        otherItem.querySelector('.faq-question svg').classList.remove('rotate-180');
+                    }
+                });
+                
+                // Toggle current item
+                item.classList.toggle('active');
+                question.querySelector('svg').classList.toggle('rotate-180');
+            });
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
